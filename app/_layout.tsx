@@ -1,24 +1,30 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+import { Drawer } from 'expo-router/drawer';
 
-import { useColorScheme } from '@/hooks/use-color-scheme';
 
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
-
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
-
+export default function Layout() {
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <Drawer>
+      <Drawer.Screen
+        name="index" // This is the name of the page and must match the url from root
+        options={{
+          drawerLabel: 'Home',
+          title: 'PetOn',
+        }}
+      />
+      <Drawer.Screen
+        name="tabs"
+        options={{
+          drawerLabel: 'Animais',
+          title: '',
+        }}
+      />
+      <Drawer.Screen
+        name="Stack"
+        options={{
+          drawerLabel: 'Consulta',
+          title: 'Constulte seu pet com a gente!!!',
+        }}
+      />
+    </Drawer>
   );
 }
