@@ -31,7 +31,7 @@ export default function TelaFormulario() {
                 router.push('/Stack/Consulta')
             }}>
                 <Link href="/Stack/Consulta" style={{ color: '#fff' }}>
-                    Ir para Proxima Tela
+                    Proxima Tela
                 </Link>
             </Botao>
         </View>

@@ -17,7 +17,7 @@ const router = useRouter()
                 router.push('/Stack')
             }}>
                 <Link href="/Stack" style={{ color: '#fff' }}>
-                    Ir para Proxima Tela
+                    Tela Inicial
                 </Link>
             </Botao>
             </View>
